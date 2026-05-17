@@ -1,0 +1,10 @@
+build/
+dist/
+*.spec
+.vscode/
+.DS_Store
+__pyache__
+*.pyc
+venv/
+env/
+.venv
