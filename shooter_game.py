@@ -30,7 +30,7 @@ win = font1.render('YOU WIN!!!', True, (255, 215, 0) )
 
 window = display.set_mode((700, 500))
 display.set_caption('Шутер')
-background = transform.scale(image.load(resourse_path('galaxy.jpg')), (700, 500))
+background = transform.scale(image.load(resourse_path('assets/galaxy.jpg')), (700, 500))
 
 FPS = 60
 clock = time.Clock()
@@ -63,7 +63,7 @@ class Player(GameSprite):
         if key_pressed[K_RIGHT] and self.rect.x < 630:
             self.rect.x += self.speed
     def fire(self):
-        bullet = Bullet('bullet.png', 10, 20, self.rect.centerx, self.rect.top, 15)
+        bullet = Bullet('assets/bullet.png', 10, 20, self.rect.centerx, self.rect.top, 15)
         bullets.add(bullet)
 
 
@@ -95,12 +95,12 @@ class Enemy(GameSprite):
 
 finish = False
 
-Heart = Player('rocket.png', 50, 70, 16, 425, 6)
+Heart = Player('assets/rocket.png', 50, 70, 16, 425, 6)
 
 monsters = sprite.Group()
 
 for i in range(10):
-    i = Enemy('ufo.png', 65, 50, random.randint(5, 630), -50, random.randint(1, 2))
+    i = Enemy('assets/ufo.png', 65, 50, random.randint(5, 630), -50, random.randint(1, 2))
     monsters.add(i)
     
 
@@ -147,7 +147,7 @@ while game:
 
         if len(monsters) < 10: 
             for i in range(10 - len(monsters)):
-                i = Enemy('ufo.png', 65, 50, random.randint(5, 630), -50, random.randint(1, 2)) 
+                i = Enemy('assets/ufo.png', 65, 50, random.randint(5, 630), -50, random.randint(1, 2)) 
                 monsters.add(i)
 
         key_pressed = key.get_pressed()
